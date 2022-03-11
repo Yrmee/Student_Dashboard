@@ -1,0 +1,116 @@
+.student {
+    flex: 4;
+    padding: 20;
+}
+
+.studentTitle {
+    color:rgb(80, 128, 156);
+    margin-left: 20px;
+}
+
+.studentTitleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.studentAddButton {
+    width: 80px;
+    border: none;
+    background-color: rgb(94, 167, 209);
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.studentGoBackButton {
+    width: 80px;
+    border: none;
+    background-color: rgb(94, 167, 209);
+    color: white;
+    font-size: 16px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 20px;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.studentContainer {
+    display: flex;
+    margin-top: 20px;
+}
+
+.studentProfile {
+    flex: 1;
+    padding: 20px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.studentChartContainer {
+    flex: 2;
+    padding: 20px;
+    margin-left: 20px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.studentChart {
+    padding-top: 50px;
+}
+
+.studentProfileTop {
+    display: flex;
+    align-items: center;
+}
+
+.studentProfileImg {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.studentProfileTopTitle {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.studentProfileUsername {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.studentProfileStudentTitle {
+    font-weight: 300;
+}
+
+.studentProfileTitle {
+    font-size: 18px;
+    font-weight: 600;
+    color: gray;
+}
+
+.studentProfileInfo {
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+    color: #444;
+    font-weight: 300;
+}
+
+.studentProfileBottom {
+    margin-top: 20px;
+}
+
+.studentProfileIcon {
+    font-size: 16px !important;
+}
+
+.studentProfileInfoTitle {
+    margin-left: 10px;
+}

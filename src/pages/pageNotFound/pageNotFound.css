@@ -1,0 +1,16 @@
+.pageNotFound {
+    flex: 4;
+}
+
+.pageNotFoundContainer {
+    padding: 20px;
+}
+
+.pageNotFoundTitle {
+    font-weight: 400;
+    color:rgb(80, 128, 156);
+    margin: 20px;
+}
+
+
+

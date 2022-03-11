@@ -1,0 +1,31 @@
+.studentList {
+    flex: 4;
+}
+
+.studentListStudent {
+    display: flex;
+    align-items: center;
+}
+
+.studentListImg {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 10px;
+}
+
+.studentListEdit {
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    background-color: rgb(63, 163, 202);
+    color: white;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.studentListDelete {
+    color: rgb(27, 16, 88);
+    cursor: pointer;
+}
