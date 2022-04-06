@@ -25,7 +25,7 @@ const bestScoreProject = data.reduce((group, data) => {
 
   return group;
 }, {});
-console.log(bestScoreProject)
+// console.log(bestScoreProject)
 
 
 

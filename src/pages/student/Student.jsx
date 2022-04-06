@@ -8,6 +8,7 @@ import './student.css';
 // import Data
 import { studentDetails } from '../../studentDetailsData';
 import studentsData from '../../studentData.json';
+import Chart from '../../components/chart/Chart';
 
 // functie to get student-details by its id
 const getStudentById = (id) => {
@@ -16,11 +17,10 @@ const getStudentById = (id) => {
 }
 
 // Data van grafiek hier zetten << = Object met nested array met objects.
-const dataPerStudent = studentsData.reduce( (group, data) => {
+const dataPerStudent = studentsData.reduce( (group, data, index) => {
     group[data.name] = group[data.name] ?? [];
 
     group[data.name].push({
-        name: data.name,
         project: data.project,
         difficulty: data.difficulty,
         enjoyability: data.enjoyability,
@@ -28,14 +28,6 @@ const dataPerStudent = studentsData.reduce( (group, data) => {
 
     return group;
 }, {})
-console.log(dataPerStudent)
-
-// Hier probeer ik Object Deconstructuring...
-const { Evelyn: { 0: { name, project, difficulty, enjoyability } } } = dataPerStudent;
-console.log(name, project, difficulty, enjoyability); // output: Evelyn SCRUM 3 4 
-
-
-
 
 /*
 for (const key of Object.keys(dataPerStudent)) {
@@ -77,6 +69,9 @@ console.log(studentProjectAverages)
 export default function Student() {
     const params = useParams(); 
     let studentInfo = getStudentById(parseInt(params.id, 10))
+    let studentData = dataPerStudent[studentInfo.firstName];
+
+    console.log(studentData)
 
     return (
         <div className="student"> 
@@ -132,24 +127,24 @@ export default function Student() {
                     </div>
                 </div>
 
-                <div className="studentChartContainer"> 
-                    <h3 className="studentChartTitle"> Student Projects Chart of {studentInfo.firstName} {studentInfo.lastName}</h3>
-                    <div className="studentChart">
-                        <ResponsiveContainer width="100%" aspect={4 / 1}>
-                            <BarChart >
-                                <XAxis xAxisId="0" dataKey="name"/>
-                                <XAxis xAxisId="1" dataKey="project" allowDuplicatedCategory={false} />
-                                <YAxis />
-                                <Tooltip />
-                                <Legend />
-                                <CartesianGrid stroke="#e0dfdf" strokeDasharray="3 3"/>
-                                <Bar dataKey="difficulty" fill="#3366cc"/>
-                                <Bar dataKey="enjoyability" fill="#009999"/>
-                            </BarChart>
-                        </ResponsiveContainer>
 
-                    </div>
-                </div>
+                    <Chart 
+                        className="studentChartContainer"
+                        data={studentData}
+                        title={`Student Projects Chart of ${studentInfo.firstName} ${studentInfo.lastName}`}
+                        grid
+                        dataKeys={{
+                            "difficulty": {
+                                color: "#3366cc",
+                                enabled: true,
+                            },
+                            "enjoyability": {
+                                color: "#009999",
+                                enabled: true,
+                            },
+                        }}
+                    />
+
             </div>
         </div>
     )

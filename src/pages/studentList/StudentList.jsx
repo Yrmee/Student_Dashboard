@@ -11,7 +11,8 @@ export default function StudentList() {
 
   // function to delete single student from the list
   const handleDelete = (id) => {
-    setData(data.filter(item => item.id !== id))
+    const foo = data.filter(item => item.id !== id);
+    setData(foo)
   } 
 
   const columns = [
@@ -45,11 +46,12 @@ export default function StudentList() {
   return (
     <div className="studentList" style={{ height: 600, width: '100%' }}>
       <DataGrid
+        getRowId={(row) => data.indexOf(row)}
         rows={data}
         disableSelectionOnClick
         columns={columns}
-        pageSize={9}
-        rowsPerPageOptions={[9]}
+        pageSize={data.length}
+        rowsPerPageOptions={[data.length]}
         checkboxSelection
       />
     </div>
