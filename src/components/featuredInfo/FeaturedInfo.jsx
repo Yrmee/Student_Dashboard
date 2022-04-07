@@ -15,7 +15,7 @@ const averageDifficulty = data.reduce((a, b) => {
   return {difficulty: a.difficulty + b.difficulty}
 }).difficulty / data.length;
 
-// get best score Project
+/* get best score Project
 const bestScoreProject = data.reduce((group, data) => {
   group[data.project] = group[data.project] ?? [];
 
@@ -25,11 +25,7 @@ const bestScoreProject = data.reduce((group, data) => {
 
   return group;
 }, {});
-// console.log(bestScoreProject)
-
-
-
-
+//console.log(bestScoreProject) */
 
 export default function FeaturedInfo() {
 

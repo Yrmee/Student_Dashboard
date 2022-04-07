@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
+import Brightness1Icon from '@mui/icons-material/Brightness1';
 import "./analytics.css";
+
 import studentsData from '../../studentData.json';
 import Chart from '../../components/chart/Chart';
 import StudentChart from '../../components/studentChart/StudentChart';
 
-////////////Groupeer data////////////////////////
+// Reduce data into project-groups
 const groupDataByKey = (key, data) => {
     return data.reduce((group, data) => {
         const dataKey = data[key];
@@ -21,7 +23,7 @@ const groupDataByKey = (key, data) => {
     }, {})
 }
 
-// Reken averages uit voor alle groepen
+// Calculate averages group project
 const getAveragesForGroup = (data) => {
     return Object.keys(data).map( key => {
         const totalAmount = data[key].length; // totaal over 1 student
@@ -88,22 +90,28 @@ export default function Analytics() {
 
     return (
         <div className="analytics">
-            <div>
-                <input type="checkbox" id="groupProjects" name="groupProjects" checked={groupProjects} onChange={(e) => setGroupProjects(e.target.checked)} />
-                <label htmlFor="groupProjects">Group projects</label><br /><br />
-            </div>
             <h1 className="analyticsTitle"> Student Analytics </h1>
 
-            <div className="analyticsChart">
-            <Chart 
-                data={chartData}
-                title="Student Analytics Overview"
-                grid
-                dataKeys={dataKeys}
-            />
+            <div className="analyticsChartContainer">
+                <Chart 
+                    data={chartData}
+                    title="Student Analytics Overview"
+                    grid
+                    dataKeys={dataKeys}
+                />
+
+                <ul className="analyticsChartLegend">
+                    <li className="legendListItem"> <Brightness1Icon fontSize="Medium" className="legendDifficultyIcon" /> Difficulty </li>
+                    <li className="legendListItem"> <Brightness1Icon fontSize="Medium" className="legendEnjoyabilityIcon"/> Enjoyability</li>
+                </ul>
+
+                <div className="groupProjectCheckbox">
+                    <input className="checkbox" type="checkbox" id="groupProjects" name="groupProjects" checked={groupProjects} onChange={(e) => setGroupProjects(e.target.checked)} />
+                    <label htmlFor="groupProjects">Group projects (Hier nog betere naam en/of tekst en uitleg zetten)</label><br /><br />
+                </div>
             </div>
 
-            <div className="analyticsChart">
+            <div className="analyticsChartContainer">
             <StudentChart 
                 data={averagesPerStudent}
                 title="Student Analytics Per Student"

@@ -1,11 +1,12 @@
 .student {
     flex: 4;
-    padding: 20;
+    padding: 20px;
 }
 
 .studentTitle {
     color:rgb(80, 128, 156);
-    margin-left: 20px;
+    margin-left: 5px;
+    margin-top: -10px;
 }
 
 .studentTitleContainer {
@@ -14,7 +15,7 @@
     justify-content: space-between;
 }
 
-.studentAddButton {
+.studentContactButton {
     width: 80px;
     border: none;
     background-color: rgb(94, 167, 209);
@@ -35,14 +36,14 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
-    margin-left: 20px;
-    margin-bottom: 40px;
-    margin-top: 20px;
+    margin-left: 10px;
+    margin-bottom: 30px;
 }
 
 .studentContainer {
     display: flex;
     margin-top: 20px;
+    background-color:rgb(249, 253, 255);
 }
 
 .studentProfile {
@@ -53,13 +54,9 @@
 
 .studentChartContainer {
     flex: 2;
-    padding: 20px;
+    padding: 40px;
     margin-left: 20px;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
-}
-
-.studentChart {
-    padding-top: 50px;
 }
 
 .studentProfileTop {

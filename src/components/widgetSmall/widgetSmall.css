@@ -3,4 +3,32 @@
     padding: 20px;
     margin-right: 20px;
     box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    background-color:rgb(249, 253, 255);
+}
+
+.widgetSmallTitle {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.widgetSmallUpdateBlog {
+    margin-bottom: 15px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+}
+
+.widgetSmallUpdateBlogTitle {
+    font-size: 18px;
+    color:rgba(0, 0, 0, 0.75);
+    margin-bottom: 10px;
+}
+
+.widgetSmallUpdateBlogText {
+    color: rgba(82, 81, 81, 0.75);
+    font-size: 14px;
 }

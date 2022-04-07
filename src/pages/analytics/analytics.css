@@ -1,8 +1,44 @@
 .analytics {
     flex: 4;
+    padding: 20px;
 }
 
 .analyticsTitle {
     color:rgb(80, 128, 156);
-    margin-left: 20px;
+    margin-left: 5px;
+    margin-top: -15px;
+    margin-bottom: 20px;
+}
+
+.analyticsChartContainer {
+    padding: 20px;
+    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+    margin-top: 20px;
+    margin-left: 5px;
+    background-color:rgb(249, 253, 255);
+}
+
+.groupProjectCheckbox {
+    padding-left: 20px;
+    color:rgb(24, 89, 119);
+}
+
+.analyticsChartLegend {
+    list-style: none;
+    margin-bottom: 10px;
+    margin-left: -22px;
+    color:rgb(29, 70, 88);
+}
+
+.legendListItem {
+    display: flex; 
+    align-items: center;
+}
+
+.legendDifficultyIcon {
+    color: #3366cc;
+}
+
+.legendEnjoyabilityIcon {
+    color: #009999;
 }

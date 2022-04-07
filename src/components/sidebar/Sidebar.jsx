@@ -7,7 +7,7 @@ export default function Sidebar() {
         <div className="sidebar">
             <div className="sidebarWrapper">
                 <div className="sidebarMenu">
-                    <h3 className="sidebarTitle">DashBoard</h3>
+                    <h3 className="sidebarTitle">DashBoard Menu</h3>
                     <ul className="sidebarList">
 
                         <Link to="/" className="link">
@@ -16,18 +16,15 @@ export default function Sidebar() {
                         </li>
                         </Link>
 
+                        <li className="sidebarListItem">
+                            <LineStyle className="sidebarIcon"/> News
+                        </li>
+
                         <Link to="/analytics" className="link">
                         <li className="sidebarListItem">
                             <Timeline className="sidebarIcon"/> Analytics
                         </li>
                         </Link>
-
-                    </ul>
-                </div>
-
-                <div className="sidebarMenu">
-                    <h3 className="sidebarTitle">Quick Menu</h3>
-                    <ul className="sidebarList">
 
                         <Link to="/studentlist" className="link">
                         <li className="sidebarListItem">
@@ -35,10 +32,6 @@ export default function Sidebar() {
                         </li>
                         </Link>
 
-                        <li className="sidebarListItem">
-                            <LineStyle className="sidebarIcon"/> Projects
-                        </li>
-                        
                     </ul>
                 </div>
             </div>

@@ -1,9 +1,26 @@
 .chart {
-    margin: 20px;
     padding: 20px;
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
 }
 
 .chartTitle {
-    margin-bottom: 20px;
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
+.renderLegendCheckboxesContainer {
+    list-style: none;
+    display: flex;
+    justify-content: left;
+}
+
+.renderLegendCheckboxes {
+    margin-left: 20px;
+    padding-left: 20px;
+    color:rgba(55, 65, 68, 0.75);
+}
+
+.checkbox {
+    margin-right: 4px;
 }

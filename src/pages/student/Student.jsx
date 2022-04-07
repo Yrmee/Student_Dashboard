@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
+import Brightness1Icon from '@mui/icons-material/Brightness1';
 import { CalendarToday, LocationSearching, MailOutline, PermIdentity, PhoneAndroid } from "@mui/icons-material";
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
 import './student.css';
 
@@ -10,14 +10,14 @@ import { studentDetails } from '../../studentDetailsData';
 import studentsData from '../../studentData.json';
 import Chart from '../../components/chart/Chart';
 
-// functie to get student-details by its id
+// get studentDetails by ID
 const getStudentById = (id) => {
     return studentDetails.find(
         (student) => student.id === id);
 }
 
-// Data van grafiek hier zetten << = Object met nested array met objects.
-const dataPerStudent = studentsData.reduce( (group, data, index) => {
+// get studentsData 
+const dataPerStudent = studentsData.reduce( (group, data) => {
     group[data.name] = group[data.name] ?? [];
 
     group[data.name].push({
@@ -29,49 +29,13 @@ const dataPerStudent = studentsData.reduce( (group, data, index) => {
     return group;
 }, {})
 
-/*
-for (const key of Object.keys(dataPerStudent)) {
-    console.log(`${key} => ${dataPerStudent[key]}`);
-}
-console.log(Object.keys(dataPerStudent).map(key => (
-    dataPerStudent[key].project
-)))
-
-for (const [key, value] of Object.entries(dataPerStudent)) {
-    console.log(`${key} => ${value}`);
-}
-
-console.log(Object.entries(dataPerStudent)) // (10)x [Array(2) ['Evelyn', Array(56)] ... ]  
-    const objEntries = Object.entries(dataPerStudent);
-    console.log(Object.fromEntries(objEntries)) // zelfde output als die hele group[data.name] etc
-
-console.log(Object.values(dataPerStudent)) // (10)x [Array(56), Array(56), .... ]
-console.log(Object.keys(dataPerStudent)) //  (10) ['Evelyn', 'Aranka', 'Floris', 'Hector', 'Martina', 'Maurits', 'Rahima', 'Sandra', 'Wietske', 'Storm']
-*/
-
-
-/*
-const studentProjectAverages = Object.keys(dataPerStudent).map( key => {
-    const totalAmount = dataPerStudent[key].length; // totaal over 1 student
-
-    const averageEnjoyability = dataPerStudent[key].reduce((a, b) => a + b.enjoyability, 0) / totalAmount;
-    const averageDifficulty = dataPerStudent[key].reduce((a, b) => a + b.difficulty, 0) / totalAmount;
-    
-    return {
-        project: key,
-        difficulty: averageDifficulty,
-        enjoyability: averageEnjoyability
-    }
-})
-console.log(studentProjectAverages)
-*/
 
 export default function Student() {
     const params = useParams(); 
     let studentInfo = getStudentById(parseInt(params.id, 10))
     let studentData = dataPerStudent[studentInfo.firstName];
 
-    console.log(studentData)
+    //console.log(studentData)
 
     return (
         <div className="student"> 
@@ -82,7 +46,7 @@ export default function Student() {
             
             <div className="studentTitleContainer"> 
                 <h1 className="studentTitle">Student Profile </h1>
-                <button className="studentAddButton"> Contact </button>
+                <button className="studentContactButton"> Contact </button>
             </div>
             
             <div className="studentContainer">
@@ -127,9 +91,8 @@ export default function Student() {
                     </div>
                 </div>
 
-
+                <div className="studentChartContainer">
                     <Chart 
-                        className="studentChartContainer"
                         data={studentData}
                         title={`Student Projects Chart of ${studentInfo.firstName} ${studentInfo.lastName}`}
                         grid
@@ -144,6 +107,12 @@ export default function Student() {
                             },
                         }}
                     />
+
+                    <ul className="analyticsChartLegend">
+                        <li className="legendListItem"> <Brightness1Icon fontSize="Medium" className="legendDifficultyIcon" /> Difficulty </li>
+                        <li className="legendListItem"> <Brightness1Icon fontSize="Medium" className="legendEnjoyabilityIcon"/> Enjoyability</li>
+                    </ul>
+                </div>
 
             </div>
         </div>

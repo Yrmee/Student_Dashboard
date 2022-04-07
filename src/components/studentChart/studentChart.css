@@ -1,9 +1,11 @@
-.chart {
-    margin: 20px;
-    padding: 20px;
-    box-shadow: 0px 0px 15px -10px rgba(0, 0, 0, 0.75);
+.studentHomepageChart {
+    padding: 10px;
 }
 
-.chartTitle {
-    margin-bottom: 20px;
+.studentHomepageChartTitle {
+    font-weight: 600;
+    font-size: 24px;
+    margin-top: -20px;
+    margin-bottom: 30px;
 }
+

@@ -1,15 +1,17 @@
-import './studentList.css';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import { DeleteOutline } from '@mui/icons-material';
+
 import { studentDetails } from '../../studentDetailsData';
-import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import './studentList.css';
+
 
 export default function StudentList() {
 
   const [data, setData] = useState(studentDetails);
 
-  // function to delete single student from the list
+// function to delete single student from the list
   const handleDelete = (id) => {
     const foo = data.filter(item => item.id !== id);
     setData(foo)
@@ -21,13 +23,13 @@ export default function StudentList() {
       renderCell: (params) => {
         return (
           <div className="studentListStudent">
-            <img className="studentListImg" src={params.row.avatar} alt=''/>
+            <img className="studentListImg" src={params.row.avatar} alt='avatar'/>
           </div>
         )
       }},
-    { field: 'firstName', headerName: 'First name', width: 130 },
+    { field: 'firstName', headerName: 'First name', width: 100 },
     { field: 'lastName', headerName: 'Last name', width: 130 },
-    { field: 'action', headerName: '', width: 150,
+    { field: 'action', headerName: '', width: 130,
       renderCell: (params) => {
         return (
           <>
@@ -44,16 +46,24 @@ export default function StudentList() {
   ];
 
   return (
-    <div className="studentList" style={{ height: 600, width: '100%' }}>
-      <DataGrid
-        getRowId={(row) => data.indexOf(row)}
-        rows={data}
-        disableSelectionOnClick
-        columns={columns}
-        pageSize={data.length}
-        rowsPerPageOptions={[data.length]}
-        checkboxSelection
-      />
+    <div className="student">
+      <div className="studentListTitleContainer">
+        <h1 className="studentListTitle">Student List</h1>
+      </div>
+
+      <div className="studentListContainer">
+        <div className="studentList" style={{ height: 600, width: '100%' }}>
+          <DataGrid
+            getRowId={(row) => data.indexOf(row)}
+            rows={data}
+            disableSelectionOnClick
+            columns={columns}
+            pageSize={data.length}
+            rowsPerPageOptions={[data.length]}
+          />
+        </div>
+      </div>
+
     </div>
   )
 }

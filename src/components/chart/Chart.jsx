@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
-//import studentData from '../../studentData.json';
 import './chart.css';
 
 export default function Chart( {title, data, grid, dataKeys, className} ) {
@@ -15,11 +14,11 @@ export default function Chart( {title, data, grid, dataKeys, className} ) {
 
     const renderLegend = () => {
         return (
-            <ul>
+            <ul className="renderLegendCheckboxesContainer">
                 {
                     Object.keys(legends).map((key) => (
-                        <li key={`item-${key}`}>
-                            <input type="checkbox" checked={legends[key].enabled} onChange={(e) => toggleLegend(key, e.target.checked)} />
+                        <li className="renderLegendCheckboxes" key={`item-${key}`}>
+                            <input className="checkbox" type="checkbox" checked={legends[key].enabled} onChange={(e) => toggleLegend(key, e.target.checked)} />
                             {key}
                         </li>
                     ))
