@@ -7,7 +7,7 @@ export default function Sidebar() {
         <div className="sidebar">
             <div className="sidebarWrapper">
                 <div className="sidebarMenu">
-                    <h3 className="sidebarTitle">DashBoard Menu</h3>
+                    <h3 className="sidebarTitle">Menu</h3>
                     <ul className="sidebarList">
 
                         <Link to="/" className="link">

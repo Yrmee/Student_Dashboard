@@ -9,7 +9,7 @@ function PageNotFound() {
                     Oops! Something went wrong..
                 </h3>
                 <Link to="/">
-                    <button className="studentAddButton"> Go Back </button>
+                    <button className="studentGoBackButton"> Go Back </button>
                 </Link>
             </div>
         </div>
