@@ -4,6 +4,7 @@ import './App.css';
 // Components
 import Topbar from './components/topbar/Topbar';
 import Sidebar from './components/sidebar/Sidebar';
+import Footer from './components/footer/Footer';
 
 // Pages
 import Home from './pages/home/Home';
@@ -26,6 +27,7 @@ function App() {
               <Route path="*" element={<PageNotFound />} />
             </Routes>
           </div>
+        <Footer />
   </BrowserRouter>
   );
 }
