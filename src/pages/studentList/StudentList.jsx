@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { DataGrid } from '@mui/x-data-grid';
 import { DeleteOutline } from '@mui/icons-material';
+import Tooltip from '@mui/material/Tooltip';
 
 import { studentDetails } from '../../studentDetailsData';
 import './studentList.css';
@@ -36,10 +37,13 @@ export default function StudentList() {
             <Link to={`/students/${params.row.id}`}>
               <button className="studentListEdit"> Details </button>
             </Link>
-            <DeleteOutline 
-              className="studentListDelete"
-              onClick={ () => handleDelete(params.row.id)}
-            />
+
+            <Tooltip title="Delete">
+                <DeleteOutline 
+                  className="studentListDelete"
+                  onClick={ () => handleDelete(params.row.id)}
+                />
+            </Tooltip>
           </>
         )
       }},

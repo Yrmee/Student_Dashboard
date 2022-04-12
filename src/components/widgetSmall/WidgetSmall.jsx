@@ -1,6 +1,5 @@
 import './widgetSmall.css';
 
-// Deze component gemaakt voor een voor mezelf completer design aan de Homepage.
 export default function WidgetSmall() {
     return (
         <div className="widgetSmall">
