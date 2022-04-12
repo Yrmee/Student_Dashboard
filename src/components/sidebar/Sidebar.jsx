@@ -28,7 +28,7 @@ export default function Sidebar() {
                             </li>
                         </Link>
 
-                        <Tooltip title="Not real. Just here for Design.">
+                        <Tooltip title="Not real. Just here for Design." placement="right">
                             <li className="sidebarListItem">
                                 <LineStyle className="sidebarIcon"/> News
                             </li>
@@ -52,19 +52,19 @@ export default function Sidebar() {
                                 </li>
                             </Link>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <FolderOpen className="sidebarIcon"/> Projects
                                 </li>
                             </Tooltip>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <Splitscreen className="sidebarIcon"/> Tasks
                                 </li>
                             </Tooltip>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <ListAlt className="sidebarIcon"/> Assignments
                                 </li>
@@ -75,31 +75,31 @@ export default function Sidebar() {
                 <div className="sidebarMenu">
                     <h3 className="sidebarTitle">System Menu</h3>
                         <ul className="sidebarList">
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <PermIdentity className="sidebarIcon"/> Profile
                                 </li>
                             </Tooltip>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <NotificationsNone className="sidebarIcon"/> Notifications
                                 </li>
                             </Tooltip>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <MailOutline className="sidebarIcon"/> Messages
                                 </li>
                             </Tooltip>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <Settings className="sidebarIcon"/> Settings
                                 </li>
                             </Tooltip>
 
-                            <Tooltip title="Not real. Just here for Design.">
+                            <Tooltip title="Not real. Just here for Design." placement="right">
                                 <li className="sidebarListItem">
                                     <HelpOutline className="sidebarIcon"/> Help
                                 </li>
