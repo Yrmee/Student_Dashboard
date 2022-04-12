@@ -35,12 +35,12 @@ export default function StudentList() {
         return (
           <>
             <Link to={`/students/${params.row.id}`}>
-              <button className="studentListEdit"> Details </button>
+              <button className="studentListDetailsBtn"> Details </button>
             </Link>
 
             <Tooltip title="Delete">
                 <DeleteOutline 
-                  className="studentListDelete"
+                  className="studentListDeleteBtn"
                   onClick={ () => handleDelete(params.row.id)}
                 />
             </Tooltip>

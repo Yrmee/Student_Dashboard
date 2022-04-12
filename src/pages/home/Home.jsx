@@ -12,6 +12,7 @@ export default function Home() {
                 <WidgetSmall />
                 <WidgetLarge />
             </div>
+            
         </div>
     );
 }

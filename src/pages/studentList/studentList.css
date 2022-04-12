@@ -26,7 +26,7 @@
     margin: 10px;
 }
 
-.studentListEdit {
+.studentListDetailsBtn {
     border: none;
     border-radius: 10px;
     padding: 5px 10px;
@@ -36,7 +36,7 @@
     margin-right: 20px;
 }
 
-.studentListDelete {
+.studentListDeleteBtn {
     color: rgb(27, 16, 88);
     cursor: pointer;
 }
