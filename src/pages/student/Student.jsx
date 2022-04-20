@@ -10,10 +10,11 @@ import { studentDetails } from '../../studentDetailsData';
 import studentsData from '../../studentData.json';
 import Chart from '../../components/chart/Chart';
 
+
 // get studentDetails by ID
-const getStudentById = (id) => {
+const getStudentById = (firstName) => {
     return studentDetails.find(
-        (student) => student.id === id);
+        (student) => student.firstName === firstName);
 }
 
 // get studentsData 
@@ -32,7 +33,7 @@ const dataPerStudent = studentsData.reduce( (group, data) => {
 
 export default function Student() {
     const params = useParams(); 
-    let studentInfo = getStudentById(parseInt(params.id, 10))
+    let studentInfo = getStudentById(params.firstName);
     let studentData = dataPerStudent[studentInfo.firstName];
 
     //console.log(studentData)
@@ -63,7 +64,7 @@ export default function Student() {
                         
                         <div className="studentProfileInfo">
                             <PermIdentity className="studentProfileIcon" />
-                            <span className="studentProfileInfoTitle"> Student id: {studentInfo.id}</span>
+                            <span className="studentProfileInfoTitle"> Studentnumber: {studentInfo.id}</span>
                         </div>
 
                         <div className="studentProfileInfo">

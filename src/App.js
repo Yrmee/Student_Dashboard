@@ -23,8 +23,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/studentlist" element={<StudentList />} />
-              <Route path="/students/:id" element={<Student />} />
-              <Route path="*" element={<PageNotFound />} />
+              <Route path="/students/:firstName" element={<Student />} />
+              <Route path="/*" element={<PageNotFound />} />
             </Routes>
           </div>
         <Footer />

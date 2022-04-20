@@ -12,11 +12,13 @@ const data = studentsData;
 const averageEnjoyability = data.reduce((a, b) => {
   return {enjoyability: a.enjoyability + b.enjoyability}
 }).enjoyability / data.length;
+const subTotalEnj = parseFloat(averageEnjoyability).toFixed(2);
 
 // get average number of difficulty of all data
 const averageDifficulty = data.reduce((a, b) => {
   return {difficulty: a.difficulty + b.difficulty}
 }).difficulty / data.length;
+const subTotalDif = parseFloat(averageDifficulty).toFixed(2);
 
 
 export default function FeaturedInfo() {
@@ -38,7 +40,7 @@ export default function FeaturedInfo() {
 
         <div className="featuredContainer">
           <span className="featuredContent">
-            <ArrowUpward className="featuredIcon"/> {averageEnjoyability}</span>
+            <ArrowUpward className="featuredIcon"/> {subTotalEnj} %</span>
         </div>
 
         <span className="featuredSub">Compared to last month</span>
@@ -49,7 +51,7 @@ export default function FeaturedInfo() {
 
         <div className="featuredContainer">
           <span className="featuredContent">
-            <ArrowDownward className="featuredIcon negative"/> {averageDifficulty}</span>
+            <ArrowDownward className="featuredIcon negative"/> {subTotalDif} %</span>
         </div>
 
         <span className="featuredSub">Compared to last month</span>

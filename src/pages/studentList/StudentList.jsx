@@ -34,7 +34,7 @@ export default function StudentList() {
       renderCell: (params) => {
         return (
           <>
-            <Link to={`/students/${params.row.id}`}>
+            <Link to={`/students/${params.row.firstName}`}>
               <button className="studentListDetailsBtn"> Details </button>
             </Link>
 
