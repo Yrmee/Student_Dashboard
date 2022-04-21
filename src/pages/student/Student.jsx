@@ -10,6 +10,8 @@ import { studentDetails } from '../../studentDetailsData';
 import studentsData from '../../studentData.json';
 import Chart from '../../components/chart/Chart';
 
+// Note: Error in console for line: 37.1 (cannot reading 'firstName' - Trying to set the error page in router/path )
+
 
 // get studentDetails by ID
 const getStudentById = (firstName) => {
