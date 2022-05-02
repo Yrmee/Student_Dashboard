@@ -1,5 +1,4 @@
 import './pageNotFound.css';
-import { Link } from 'react-router-dom';
 
 function PageNotFound() {
     return (
@@ -8,9 +7,6 @@ function PageNotFound() {
                 <h3 className="pageNotFoundTitle">
                     Oops! Something went wrong..
                 </h3>
-                <Link to="/">
-                    <button className="studentGoBackButton"> Go Back </button>
-                </Link>
             </div>
         </div>
     )

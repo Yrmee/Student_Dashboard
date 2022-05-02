@@ -40,7 +40,7 @@ const getAveragesForGroup = (data) => {
 }
 
     
-// gemiddelde Leuk&Moeilijk uitrekenen op naam per student
+// Calculate averages per student
 const mainProjectAverages = (projectAverages) => {
     return projectAverages.reduce((group, data) => {
         const mainKey = data.project.split('-')[0].trim();
@@ -107,14 +107,14 @@ export default function Analytics() {
 
                 <div className="groupProjectCheckbox">
                     <input className="checkbox" type="checkbox" id="groupProjects" name="groupProjects" checked={groupProjects} onChange={(e) => setGroupProjects(e.target.checked)} />
-                    <label htmlFor="groupProjects">Group projects (Hier nog betere naam en/of tekst en uitleg zetten)</label><br /><br />
+                    <label htmlFor="groupProjects">Concat Projects</label><br /><br />
                 </div>
             </div>
 
             <div className="analyticsChartContainer">
             <StudentChart 
                 data={averagesPerStudent}
-                title="Student Analytics Per Student"
+                title="Student Analytics Enjoyability and Difficulty per Student"
                 grid
             />
             </div>

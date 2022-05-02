@@ -1,5 +1,5 @@
 import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, Navigate } from 'react-router-dom';
 import Brightness1Icon from '@mui/icons-material/Brightness1';
 import { CalendarToday, LocationSearching, MailOutline, PermIdentity, PhoneAndroid } from "@mui/icons-material";
 
@@ -10,11 +10,9 @@ import { studentDetails } from '../../studentDetailsData';
 import studentsData from '../../studentData.json';
 import Chart from '../../components/chart/Chart';
 
-// Note: Error in console for line: 39.1 (cannot reading 'firstName' - Trying to set the error page in router/path )
-
 
 // get studentDetails by ID
-const getStudentById = (firstName) => {
+const getStudentByFirstName = (firstName) => {
     return studentDetails.find(
         (student) => student.firstName === firstName);
 }
@@ -35,10 +33,11 @@ const dataPerStudent = studentsData.reduce( (group, data) => {
 
 export default function Student() {
     const params = useParams(); 
-    let studentInfo = getStudentById(params.firstName);
-    let studentData = dataPerStudent[studentInfo.firstName];
+    let studentInfo = getStudentByFirstName(params.firstName);
 
-    //console.log(studentData)
+    if (! studentInfo) {
+        return (<Navigate to="/page-not-found" />)
+    }
 
     return (
         <div className="student"> 
@@ -96,7 +95,7 @@ export default function Student() {
 
                 <div className="studentChartContainer">
                     <Chart 
-                        data={studentData}
+                        data={dataPerStudent[studentInfo.firstName]}
                         title={`Student Projects Chart of ${studentInfo.firstName} ${studentInfo.lastName}`}
                         grid
                         dataKeys={{

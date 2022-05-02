@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import './App.css';
 
 // Components
@@ -24,7 +24,8 @@ function App() {
               <Route path="/analytics" element={<Analytics />} />
               <Route path="/studentlist" element={<StudentList />} />
               <Route path="/students/:firstName" element={<Student />} />
-              <Route path="/*" element={<PageNotFound />} />
+              <Route path="/page-not-found" element={<PageNotFound />} />
+              <Route path="/*" element={<Navigate to="/page-not-found" />} />
             </Routes>
           </div>
         <Footer />
