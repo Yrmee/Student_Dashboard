@@ -61,7 +61,7 @@ export default function Analytics() {
     const [groupProjects, setGroupProjects] = useState(true);
     const [chartData, setChartData] = useState()
 
-    const [dataKeys, setDataKeys] = useState({
+    const [dataKeys] = useState({
         "difficulty": {
             color: "#3366cc",
             enabled: true,
@@ -86,7 +86,7 @@ export default function Analytics() {
         } else {
             setChartData(averagesPerProject)
         }
-
+        // eslint-disable-next-line
     }, [groupProjects])
 
     return (
