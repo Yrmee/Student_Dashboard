@@ -1,7 +1,6 @@
 import './widgetLarge.css';
-
-import studentsData from '../../studentData.json';
 import StudentChart from '../../components/studentChart/StudentChart';
+import studentsData from '../../studentData.json';
 
 const groupDataByKey = (key, data) => {
     return data.reduce((group, data) => {

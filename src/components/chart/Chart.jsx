@@ -3,6 +3,7 @@ import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, Responsive
 import './chart.css';
 
 export default function Chart( {title, data, grid, dataKeys, className} ) {
+
     const [legends, setLegends] = useState(dataKeys)
     const toggleLegend = (legendKey, enabled) => {
         const legendGroup = legends;
@@ -11,7 +12,7 @@ export default function Chart( {title, data, grid, dataKeys, className} ) {
 
         setLegends({...legendGroup})
     }
-
+    // checkbox to toggle legend bars between Enjotability and Difficulty
     const renderLegend = () => {
         return (
             <ul className="renderLegendCheckboxesContainer">
@@ -41,7 +42,6 @@ export default function Chart( {title, data, grid, dataKeys, className} ) {
                     {legends && Object.keys(legends).filter(key => legends[key].enabled).map(key => (
                         <Bar key={key} dataKey={key} fill={legends[key].color}/>
                     ))}
-
                 </BarChart>
             </ResponsiveContainer>
         </div>

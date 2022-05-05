@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import Brightness1Icon from '@mui/icons-material/Brightness1';
 import { CalendarToday, LocationSearching, MailOutline, PermIdentity, PhoneAndroid } from "@mui/icons-material";
+import Tooltip from '@mui/material/Tooltip';
 
 import './student.css';
 
@@ -17,7 +18,7 @@ const getStudentByFirstName = (firstName) => {
         (student) => student.firstName === firstName);
 }
 
-// get studentsData 
+// group data
 const dataPerStudent = studentsData.reduce( (group, data) => {
     group[data.name] = group[data.name] ?? [];
 
@@ -48,7 +49,9 @@ export default function Student() {
             
             <div className="studentTitleContainer"> 
                 <h1 className="studentTitle">Student Profile </h1>
+                <Tooltip title="Does not work, just here for design" placement="left">
                 <button className="studentContactButton"> Contact </button>
+                </Tooltip>
             </div>
             
             <div className="studentContainer">

@@ -8,13 +8,13 @@ const data = studentsData;
 //// Note: Average Best Score Project is not real content. 
 // Just design for the homepage. 
 
-// get average number of enjoyability of all data
+// get average in percentage of enjoyability of all data
 const averageEnjoyability = data.reduce((a, b) => {
   return {enjoyability: a.enjoyability + b.enjoyability}
 }).enjoyability / data.length;
 const subTotalEnj = parseFloat(averageEnjoyability).toFixed(2);
 
-// get average number of difficulty of all data
+// get average percentage of difficulty of all data
 const averageDifficulty = data.reduce((a, b) => {
   return {difficulty: a.difficulty + b.difficulty}
 }).difficulty / data.length;

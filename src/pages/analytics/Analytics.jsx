@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import Brightness1Icon from '@mui/icons-material/Brightness1';
+import Tooltip from '@mui/material/Tooltip';
 import "./analytics.css";
 
 import studentsData from '../../studentData.json';
 import Chart from '../../components/chart/Chart';
 import StudentChart from '../../components/studentChart/StudentChart';
 
-// Reduce data into project-groups
+// Reduce all data into project-groups
 const groupDataByKey = (key, data) => {
     return data.reduce((group, data) => {
         const dataKey = data[key];
@@ -106,8 +107,11 @@ export default function Analytics() {
                 </ul>
 
                 <div className="groupProjectCheckbox">
+                    <Tooltip title="Group projects together for a better overview in chart." placement="top">
                     <input className="checkbox" type="checkbox" id="groupProjects" name="groupProjects" checked={groupProjects} onChange={(e) => setGroupProjects(e.target.checked)} />
-                    <label htmlFor="groupProjects">Concat Projects</label><br /><br />
+                    </Tooltip>
+                    <label htmlFor="groupProjects">Group projects</label><br /><br />
+                    
                 </div>
             </div>
 

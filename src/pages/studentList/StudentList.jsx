@@ -12,7 +12,7 @@ export default function StudentList() {
 
   const [data, setData] = useState(studentDetails);
 
-// function to delete single student from the list
+// delete single student from the list
   const handleDelete = (id) => {
     const foo = data.filter(item => item.id !== id);
     setData(foo)
