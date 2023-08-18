@@ -58,3 +58,7 @@ Assignment: Create and Design a Student Dashboard to make it easy for teachers t
 * [Mui](https://www.mui.com)
 
 ## Project Visuals
+![Homepage](/ProjectVisuals/homepage.png)
+![StudenAnalyticsOverview](/ProjectVisuals/studentAnalyticsOverview.png)
+![studentList](/ProjectVisuals/studentList.png)
+![studentProfile](/ProjectVisuals/studentProfile.png)
